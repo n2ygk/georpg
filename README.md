@@ -5,7 +5,7 @@ Just messing around for Lisa trying to solve
 ## RPG simulator
 Get an [IBM1130](http://media.ibm1130.org/sim/ibm1130.zip) and
 [RPG II simulator](http://media.ibm1130.org/sim/rpgpreview.zip) from
-http://media.ibm1130.org/sim/ibm1130.zip
+http://ibm1130.org/sim/downloads
 
 Build the simulator (ignore the errors).
 ```bash
