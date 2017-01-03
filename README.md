@@ -2,12 +2,12 @@
 Just messing around for Lisa trying to solve
 [this puzzle](https://www.geocaching.com/geocache/GC6Y1J1_get-with-the-program)
 
-## RPG simulator
+## IBM 1130 and RPG simulator
 Get an [IBM1130](http://media.ibm1130.org/sim/ibm1130.zip) and
 [RPG II simulator](http://media.ibm1130.org/sim/rpgpreview.zip) from
 http://ibm1130.org/sim/downloads
 
-May have to read the
+Read the
 [RPG II reference manual](https://publib.boulder.ibm.com/iseries/v5r1/ic2924/books/c0918180.pdf)
 
 Build the simulator (ignore the errors).
@@ -17,7 +17,7 @@ make
 
 Test RPG with the demo program:
 ```bash
-ibm1130$ ./ibm1130 runrpg rpg.job
+ibm1130$ ./ibm1130 runrpg rpg
 
 IBM 1130 simulator V3.8-0
 runrpg> * this script file sets up the system so that
@@ -164,21 +164,23 @@ END OF COMPILATION
         $123.45          22.22
 ```
 
+## Fix runrpg to take paramterized job name.
+
+Fixed [runrpg](./runrpg) to use `%1` parameter for the RPG job basename.
+
 ## Convert the sample program image to text
 
 Waste time screwing around with some OCR tools then just type it all.
-Hopefully get the spacing right.
+Hopefully get the spacing right. Use the reference manual to get the
+spacing right.
 
 See [geocache.job](./geocache.job).
 
-Couldn't figure out how to get it to run this job so just copy it.
-It hangs the 1130 simulator and locks up the TTY. Kill the process from elsewhere.
+When run it hangs the 1130 simulator and locks up the TTY. Kill the process from elsewhere.
 Looking at the printer.txt there are a few compiler errors it looks like.
 
 ```bash
-ibm1130$ cp geocache.job rpg.job
-ibm1130$ rm printer.txt
-ibm1130$ ./ibm1130 runrpg rpg.job
+ibm1130$ ./ibm1130 runrpg geocache
 
 IBM 1130 simulator V3.8-0
 runrpg> * this script file sets up the system so that
@@ -277,3 +279,11 @@ PAGE   2
                                                                                         NOTE  089
 
 ```
+
+## Still TODO:
+Figure out how to get the three input/output files onto the disk:
+- [LOOK](./look.txt)
+- [CACHERS](./cachers.txt)
+- [CHARAC](./charac.txt)
+
+This looks like I just need to learn some JCL to read the file(s).
