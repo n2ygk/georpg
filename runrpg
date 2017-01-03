@@ -13,12 +13,12 @@ dep CRTIME 300
 dep ctime 3000
 
 detach prt
-delete printer.txt
+delete %1.txt
 
 attach dsk dmsrpg.dsk
-attach prt printer.txt
+attach prt %1.txt
 
-att cr rpg.job
+att cr %1.job
 boot   dsk
 
 echo
