@@ -2,9 +2,9 @@
 // RPG
      H 64                                                                 QCY1J1
      FQCY1J1  UP  F      64            DISK
-     E                     LOOK       20  1
-     E                     CACHER     51  20
-     E                     CHARAC     62  1  A
+     E                    LOOK       20   1
+     E                    CACHER     51  20
+     E                    CHARAC     62   1 A
      IQCY1J1  NS  01
      I                                    P   1   43LATSTA
      I                                    P   5   83LONSTA
@@ -21,66 +21,74 @@
      I                                        2   30CHK23
      I                                        4   50CHK45
      C**************************************************************************
-     C                     Z-ADD*ZERO      FACTOR  50
+     C*1N 1N 2N 3Factor1+++OpcdeFactor2+++ResultLenDHHiLoEqComments++++++ 
+     C                     Z-ADD*ZERO     FACTOR 50
      C                     EXSR INITA
-     C                     Z-ADDFACTOR     CHKSUM
-     C                     Z-ADDCHK1       CHKTOT  40
-     C                     ADD  CHK2       CHKTOT
-     C                     ADD  CHK3       CHKTOT
-     C                     ADD  CHK4       CHKTOT
-     C                     ADD  CHK5       CHKTOT
-     C           CHKTOT    COMP 26                        98  =
-     C  N98                SETON                      LR
+     C                     Z-ADDFACTOR    CHKSUM
+     C                     Z-ADDCHK1      CHKTOT 40
+     C                     ADD  CHK2      CHKTOT
+     C                     ADD  CHK3      CHKTOT
+     C                     ADD  CHK4      CHKTOT
+     C                     ADD  CHK5      CHKTOT
+     C*1N 1N 2N 3Factor1+++OpcdeFactor2+++ResultLenDHHiLoEqComments++++++ 
+     C           CHKTOT    COMP 26                       98 =
+     C  N98                SETON                     LR
      C  N98                GOTO END
-     C                     Z-ADD*ZERO      CHKTOT
-     C           CHK23     MULT CHK45      CHKTOT
-     C           CHKTOT    COMP 3256                      98 =
+     C                     Z-ADD*ZERO     CHKTOT
+     C           CHK23     MULT CHK45     CHKTOT
+     C           CHKTOT    COMP 3256                     98 =
      C  N98                SETON
      C  N98                GOTO END
      C**
-     C                     SUB  3          FACTOR
+     C                     SUB  3         FACTOR
      C**
-     C                     Z-ADD*ZERO      ADDEND  66
-     C                     Z-ADD*ZERO      DEC6    66
-     C                     Z-ADDLATSTA     NWORK7
-     C           NWORK5    DIV  60         DEC6    66
-     C           FACTOR    DIV  1000000    ADDEND
-     C                     ADD  ADDEND     DEC6
-     C                     Z-ADD*ZERO      NWORK5
-     C           DEC6      MULT 60         NWORK5
-     C                     Z-ADDNWORK7     LATEND  73
+     C*1N 1N 2N 3Factor1+++OpcdeFactor2+++ResultLenDHHiLoEqComments++++++ 
+     C                     Z-ADD*ZERO     ADDEND 66
+     C                     Z-ADD*ZERO     DEC6   66
+     C                     Z-ADDLATSTA    NWORK7
+     C           NWORK5    DIV  60        DEC6   66
+     C           FACTOR    DIV  1000000   ADDEND
+     C                     ADD  ADDEND    DEC6
+     C                     Z-ADD*ZERO     NWORK5
+     C           DEC6      MULT 60        NWORK5
+     C                     Z-ADDNWORK7    LATEND 73
      C**
-     C                     Z-ADD*ZERO      DEC6
-     C                     Z-ADDLONSTA     NWORK7
-     C           NWORK5    DIV  60         DEC6
-     C                     ADD  ADDEND     DEC6
-     C                     Z-ADD*ZERO      NWORK5
-     C           DEC6      MULT 60         NWORK5
-     C                     Z-ADDNWORK7     LONEND  73
+     C                     Z-ADD*ZERO     DEC6
+     C                     Z-ADDLONSTA    NWORK7
+     C           NWORK5    DIV  60        DEC6
+     C                     ADD  ADDEND    DEC6
+     C                     Z-ADD*ZERO     NWORK5
+     C           DEC6      MULT 60        NWORK5
+     C                     Z-ADDNWORK7    LONEND 73
+     C*1N 1N 2N 3Factor1+++OpcdeFactor2+++ResultLenDHHiLoEqComments++++++ 
      C**
      C           END       TAG
      C**************************************************************************
+     C*1N 1N 2N 3Factor1+++OpcdeFactor2+++ResultLenDHHiLoEqComments++++++ 
      C           INITA     BEGSR
-     C                     Z-ADD*ZERO      CT      20
+     C                     Z-ADD*ZERO     CT     20
      C           TAG1      TAG
-     C                     ADD  1          CT
-     C           CT        COMP 52                        99  =
+     C                     ADD  1         CT
+     C           CT        COMP 52                       99  =
+     C*1N 1N 2N 3Factor1+++OpcdeFactor2+++ResultLenDHHiLoEqComments++++++ 
      C   99                GOTO ENDA
-     C                     MOVEACACHTER,CT LOOK
-     C                     Z-ADD*ZERO      IX      20
+     C                     MOVEACACHER,CT LOOK
+     C                     Z-ADD*ZERO     IX     20
      C           TAG2      TAG
-     C                     ADD  1          IX
-     C           IX        COMP 21                        99  =
+     C                     ADD  1         IX
+     C           IX        COMP 21                       99  =
      C   99                GOTO TAG1
-     C                     Z-ADD1          IZ      20
-     C           LOOK,IX   LOKUPCHARAC,IZ                 99  =
-     C   99                ADD  IZ         FACTOR
+     C                     Z-ADD1         IZ     20
+     C           LOOK,IX   LOKUPCHARAC,IZ                99  =
+     C   99                ADD  IZ        FACTOR
      C                     GOTO TAG2
      C           ENDA      ENDSR
      C**************************************************************************
-     OQCYIJ1            98
-     O                         LATEND      14P
-     O                         LONEND      18P
+     O*...............N 1N 2N 3Field+YBEnd+PConstant/editword+++++++++... 
+     OQCYIJ1           98
+     O                         LATEND    14P
+     O                         LONEND    18P
+/*     
 ** CACHER
 +TOM+
 1ST. MATE

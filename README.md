@@ -7,6 +7,9 @@ Get an [IBM1130](http://media.ibm1130.org/sim/ibm1130.zip) and
 [RPG II simulator](http://media.ibm1130.org/sim/rpgpreview.zip) from
 http://ibm1130.org/sim/downloads
 
+May have to read the
+[RPG II reference manual](https://publib.boulder.ibm.com/iseries/v5r1/ic2924/books/c0918180.pdf)
+
 Build the simulator (ignore the errors).
 ```bash
 make
