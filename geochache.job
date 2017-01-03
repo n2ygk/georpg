@@ -60,6 +60,81 @@
      C**
      C           END       TAG
      C**************************************************************************
+     C           INITA     BEGSR
+     C                     Z-ADD*ZERO      CT      20
+     C           TAG1      TAG
+     C                     ADD  1          CT
+     C           CT        COMP 52                        99  =
+     C   99                GOTO ENDA
+     C                     MOVEACACHTER,CT LOOK
+     C                     Z-ADD*ZERO      IX      20
+     C           TAG2      TAG
+     C                     ADD  1          IX
+     C           IX        COMP 21                        99  =
+     C   99                GOTO TAG1
+     C                     Z-ADD1          IZ      20
+     C           LOOK,IX   LOKUPCHARAC,IZ                 99  =
+     C   99                ADD  IZ         FACTOR
+     C                     GOTO TAG2
+     C           ENDA      ENDSR
+     C**************************************************************************
+     OQCYIJ1            98
+     O                         LATEND      14P
+     O                         LONEND      18P
+** CACHER
++TOM+
+1ST. MATE
+BORST68
+BRIDGEBUM
+CAMELPRODDER
+CAPTAIN JON
+CHICKENELBOWS
+CHILEHEAD
+CHIRS K IN GEAUGA
+CIARMER
+DAVVVY
+DELTADELTA1
+ELBAPATCH
+EYEASH
+FLOWTEN
+FMORAES
+GATE KEEPER
+GMANSAN
+HARLEY94XL
+JEFF&SOMETIMESFAMILY
+JEFFANDCHRISSY
+JFW26
+JORDAN1959
+LCSM
+LUCKYSGIRLS
+MATHQTPI
+MI15TEAM
+MM&I
+MOVED
+MUPPET4H
+NEOGEO585
+NOGARD4B
+NYLIMB
+NYWANDERER
+ODHOME
+RICKRICH
+SILENTP42
+SPOOKO13
+STRIVING4CAMELOT
+TEAM BARDINI
+TEAMAJK
+THE G.P.S.
+THEGPS
+THETILLEYHAT
+TSANDCS
+TTOMW
+WALL77
+WHITE PRIVILEGE
+WOMPRAT
+YURTLES
+ZILLACLOUD
+** CHARAC
+123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_+\{}|;:,.<>/?-
 /*                    
 // XEQ                X
 /*
