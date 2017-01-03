@@ -1,65 +1,22 @@
 // JOB
 // RPG
-     H 64                                                                 QCY1J1
-     FQCY1J1  UP  F      64            DISK
-     E                     LOOK       20  1
-     E                     CACHER     51  20
-     E                     CHARAC     62  1  A
-     IQCY1J1  NS  01
-     I                                    P   1   43LATSTA
-     I                                    P   5   83LONSTA
-     I            DS
-     I                                        1   73NWORK7
-     I                                        3   73NWORK5
-     I            DS
-     I                                        1   50CHKSUM
-     I                                        1   10CHK1
-     I                                        2   20CHK2
-     I                                        3   30CHK3
-     I                                        4   40CHK4
-     I                                        5   50CHK5
-     I                                        2   30CHK23
-     I                                        4   50CHK45
-     C**************************************************************************
-     C                     Z-ADD*ZERO      FACTOR  50
-     C                     EXSR INITA
-     C                     Z-ADDFACTOR     CHKSUM
-     C                     Z-ADDCHK1       CHKTOT  40
-     C                     ADD  CHK2       CHKTOT
-     C                     ADD  CHK3       CHKTOT
-     C                     ADD  CHK4       CHKTOT
-     C                     ADD  CHK5       CHKTOT
-     C           CHKTOT    COMP 26                        98  =
-     C  N98                SETON                      LR
-     C  N98                GOTO END
-     C                     Z-ADD*ZERO      CHKTOT
-     C           CHK23     MULT CHK45      CHKTOT
-     C           CHKTOT    COMP 3256                      98 =
-     C  N98                SETON
-     C  N98                GOTO END
-     C**
-     C                     SUB  3          FACTOR
-     C**
-     C                     Z-ADD*ZERO      ADDEND  66
-     C                     Z-ADD*ZERO      DEC6    66
-     C                     Z-ADDLATSTA     NWORK7
-     C           NWORK5    DIV  60         DEC6    66
-     C           FACTOR    DIV  1000000    ADDEND
-     C                     ADD  ADDEND     DEC6
-     C                     Z-ADD*ZERO      NWORK5
-     C           DEC6      MULT 60         NWORK5
-     C                     Z-ADDNWORK7     LATEND  73
-     C**
-     C                     Z-ADD*ZERO      DEC6
-     C                     Z-ADDLONSTA     NWORK7
-     C           NWORK5    DIV  60         DEC6
-     C                     ADD  ADDEND     DEC6
-     C                     Z-ADD*ZERO      NWORK5
-     C           DEC6      MULT 60         NWORK5
-     C                     Z-ADDNWORK7     LONEND  73
-     C**
-     C           END       TAG
-     C**************************************************************************
-/*                    
-// XEQ                X
+01010H
+01020FBALANCE IPE F      80            READ42
+01030FFINCHRGEO   F     120     OF     PRINTER
+02010IBALANCE AA  01
+02020I                                        1   52BALFOR
+03010C   01      BALFOR    COMP 6                    11  11
+03020C   11      BALFOR    MULT 0.18      INTRST  52H
+03030C  N11                MOVE 1.00      INTRST  52
+04010OFINCHRGEH 1201
+04020O       OR        OF
+04030O                                   30 'BALANCE FINANCE CHARGE'
+04040O        D  1     01
+04050O                         BALFOR    15 '$  0.  '
+04060O                         INTRST    30 '      $  0.  '
+/*
+// XEQ                     X
+10040
+  200
+12345
 /*
