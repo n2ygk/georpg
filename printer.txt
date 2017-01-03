@@ -1,0 +1,72 @@
+
+PAGE   1
+
+// JOB    1234
+
+LOG DRIVE   CART SPEC   CART AVAIL  PHY DRIVE
+  0000        1234        1234        0000
+
+V2 M12   ACTUAL 16K  CONFIG 16K
+
+PAGE   1
+
+// JOB
+
+LOG DRIVE   CART SPEC   CART AVAIL  PHY DRIVE
+  0000        1234        1234        0000
+
+V2 M12   ACTUAL 16K  CONFIG 16K
+
+// RPG
+
+PAGE   2
+                                      V1-3  1130  RPG   QCY1J1
+
+
+   SEQ NO  PG LIN    SPECIFICATIONS COL 6 - 74                                            ERRORS
+
+
+                     H 64                                                                 QCY1J1
+    0001             FQCY1J1  UP  F      64            DISK
+    ******           E                     LOOK       20  1
+                                                                                        NOTE  030
+                                                                                        NOTE  033
+                                                                                        NOTE  034
+                                                                                        NOTE  035
+                                                                                        NOTE  038
+    ******           E                     CACHER     51  20
+                                                                                        NOTE  030
+                                                                                        NOTE  033
+                                                                                        NOTE  034
+                                                                                        NOTE  035
+                                                                                        NOTE  038
+    ******           E                     CHARAC     62  1  A
+                                                                                        NOTE  030
+                                                                                        NOTE  033
+                                                                                        NOTE  034
+                                                                                        NOTE  035
+                                                                                        NOTE  038
+    0002             IQCY1J1  NS  01
+    0003             I                                    P   1   43LATSTA
+    0004             I                                    P   5   83LONSTA
+    ******           I            DS
+                                                                                        NOTE  131
+    0005             I                                        1   73NWORK7
+    0006             I                                        3   73NWORK5
+    ******           I            DS
+                                                                                        NOTE  131
+    0007             I                                        1   50CHKSUM
+    0008             I                                        1   10CHK1
+    0009             I                                        2   20CHK2
+    0010             I                                        3   30CHK3
+    0011             I                                        4   40CHK4
+    0012             I                                        5   50CHK5
+    0013             I                                        2   30CHK23
+    0014             I                                        4   50CHK45
+                     C**************************************************************************
+    0015             C                     Z-ADD*ZERO      FACTOR  50
+                                                                                        NOTE  083
+                                                                                        NOTE  094
+                                                                                        NOTE  094
+                                                                                        NOTE  089
+                                                         

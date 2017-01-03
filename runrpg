@@ -1,0 +1,26 @@
+* this script file sets up the system so that
+* you can use the GUI to process jobs
+
+set gui on
+
+* The RPG 1132 printer drivers are slower than
+* the ones encountered previously; allow more time
+* between printer and card reader interrupts to avoid 
+* Print Check errors. The card reader has to be slowed
+* down otherwise it can starve the printer driver of CPU cycles.
+
+dep CRTIME 300
+dep ctime 3000
+
+detach prt
+delete printer.txt
+
+attach dsk dmsrpg.dsk
+attach prt printer.txt
+
+att cr rpg.job
+boot   dsk
+
+echo
+echo Use the "tear" button to view the output
+

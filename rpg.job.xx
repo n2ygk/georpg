@@ -1,0 +1,22 @@
+// JOB
+// RPG
+01010H
+01020FBALANCE IPE F      80            READ42
+01030FFINCHRGEO   F     120     OF     PRINTER
+02010IBALANCE AA  01
+02020I                                        1   52BALFOR
+03010C   01      BALFOR    COMP 6                    11  11
+03020C   11      BALFOR    MULT 0.18      INTRST  52H
+03030C  N11                MOVE 1.00      INTRST  52
+04010OFINCHRGEH 1201
+04020O       OR        OF
+04030O                                   30 'BALANCE FINANCE CHARGE'
+04040O        D  1     01
+04050O                         BALFOR    15 '$  0.  '
+04060O                         INTRST    30 '      $  0.  '
+/*
+// XEQ                     X
+10040
+  200
+12345
+/*
